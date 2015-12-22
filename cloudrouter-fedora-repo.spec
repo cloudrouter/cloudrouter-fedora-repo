@@ -1,19 +1,19 @@
 %define cr_display_name CloudRouter
 %define cr_name cloudrouter
-%define cr_version 2
+%define cr_version 3
 
-%define base_display_name Fedora 22
+%define base_display_name Fedora 23
 %define base_name fedora
-%define base_version 22
+%define base_version 23
 
 Summary:	%{cr_display_name} repository files for %{base_display_name}
 Name:		%{cr_name}-%{base_name}-repo
 Version:	%{cr_version}
-Release:	3
+Release:	1
 License:	AGPLv3
 Group:		System Environment/Base
 Source0:	%{cr_name}.repo
-Source1:	RPM-GPG-KEY-%{cr_name}-%{cr_version}-primary
+Source1:	RPM-GPG-KEY-CLOUDROUTER-PRIMARY
 BuildArch:	noarch
 Provides:	cloudrouter-repo
 Conflicts:	%{cr_name}-%{base_name}-release
@@ -40,7 +40,6 @@ install -pm 644 %{SOURCE0} $RPM_BUILD_ROOT%{_sysconfdir}/yum.repos.d
 
 # GPG Key
 install -Dpm 644 %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/pki/rpm-gpg
-ln -s $(basename %{SOURCE1}) $RPM_BUILD_ROOT%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-cloudrouter-latest-primary
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -51,6 +50,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) /etc/yum.repos.d/*
 
 %changelog
+* Tue Dec 15 2015 John Siegrist <john@complects.com> - 3-1
+- Rebase to F23 and bump version to CRv3.
+
 * Thu Aug 27 2015 John Siegrist <john@complects.com> - 2-3
 - Added support for virtual package "cloudrouter-repo".
 
