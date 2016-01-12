@@ -16,7 +16,6 @@ Source0:	%{cr_name}.repo
 Source1:	RPM-GPG-KEY-CLOUDROUTER-PRIMARY
 BuildArch:	noarch
 Provides:	cloudrouter-repo
-Conflicts:	%{cr_name}-%{base_name}-release
 Conflicts:	%{cr_name}-release-%{base_name}
 
 %description
