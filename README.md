@@ -1,2 +1,3 @@
 # cloudrouter-repo
-CloudRouter repository RPM package for non-release consumption on the Fedora-based platform.
+RPM package for enabling the CloudRouter (Fedora) Repo.
+
