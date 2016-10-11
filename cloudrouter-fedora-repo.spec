@@ -1,14 +1,14 @@
 %define cr_display_name CloudRouter
 %define cr_name cloudrouter
-%define cr_version 3
+%define cr_version 4
 
-%define base_display_name Fedora 23
+%define base_display_name Fedora 24
 %define base_name fedora
 
 Summary:	%{cr_display_name} repository files for %{base_display_name}
 Name:		%{cr_name}-%{base_name}-repo
 Version:	%{cr_version}
-Release:	2
+Release:	1
 License:	AGPLv3
 Group:		System Environment/Base
 Source0:	%{cr_name}.repo
@@ -48,6 +48,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) /etc/yum.repos.d/*
 
 %changelog
+* Mon Oct 10 2016 John Siegrist <john@complects.com> - 4-1
+- Rebase to F24 and bump version to CRv4.
+
 * Wed Mar 30 2016 John Siegrist <john@complects.com> - 3-2
 - Updated the CRv3 Repo URL back to the old scheme.
 
